@@ -1,0 +1,11 @@
+title: Darwin Campa - UX and visual design
+email: darwincampa@gmail.com
+description: >
+  The best damn portfolio of UX, UI, and visual design work you've ever seen.
+baseurl: "" # the subpath of your site, e.g. /blog
+url: "" # the base hostname & protocol for your site, e.g. http://example.com
+twitter_username: yorb
+github_username:  yorb
+
+# Build settings
+markdown: kramdown

@@ -1,0 +1,48 @@
+@charset "UTF-8";
+
+$secondary-color: rgba(black, 0.6);
+
+@keyframes fade-in {
+  0% { opacity: 0; }
+  100% { opacity: 1; }
+}
+
+@keyframes slide-up {
+  0% { transform: translateY(100%); }
+  100% { transform: translateY(0); }
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Nunito Sans', sans-serif;
+  margin: 0;
+}
+
+a {
+  color: inherit;
+  transition: opacity 0.3s ease-in;
+
+  &:hover {
+    opacity: 0.6;
+  }
+}
+
+.button {
+  display: inline-block;
+  padding: 0 24px;
+  line-height: 40px;
+  border: 2px solid;
+  border-radius: 20px;
+  text-decoration: none;
+  font-weight: bold;
+
+  &.linkedin {
+    $color: #00a0dc;
+
+    border-color: $color;
+    color: $color;
+  }
+}
