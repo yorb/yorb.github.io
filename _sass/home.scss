@@ -12,12 +12,12 @@
       opacity: 0;
       animation: fade-in;
       animation-fill-mode: forwards;
-      animation-duration: 0.6s;
+      animation-duration: 0.5s;
       animation-timing-function: ease-in;
 
       @for $i from 1 through 3 {
         &:nth-child(#{$i}) {
-          animation-delay: #{$i * 0.6}s;
+          animation-delay: #{$i * 0.5}s;
         }
       }
     }
@@ -44,13 +44,14 @@
     text-align: center;
     height: 20vh;
 
-    transform: translateY(100%);
+    .button-wrapper {
+      transform: translateY(200%);
+      opacity: 0;
 
-    animation: slide-up;
-    animation-duration: 0.5s;
-    animation-timing-function: cubic-bezier(.48, 1.38, .77, .99);
-    animation-delay: 3.6s;
-    animation-fill-mode: forwards;
+      animation:
+        slide-up 0.5s $bounce-timing-function 3.5s forwards,
+        fade-in 0.5s ease-in 3.5s forwards;
+    }
 
     .footnote {
       color: $secondary-color;
@@ -58,7 +59,7 @@
       font-size: 12px;
       opacity: 0;
 
-      animation: fade-in 0.6s ease-in 4.5s forwards;
+      animation: fade-in 0.5s ease-in 4.5s forwards;
     }
   }
 }

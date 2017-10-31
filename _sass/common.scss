@@ -2,6 +2,9 @@
 
 $secondary-color: rgba(black, 0.6);
 
+$bounce-timing-function: cubic-bezier(.48, 1.38, .77, .99);
+$slow-timing-function: cubic-bezier(.11, .99, .35, 1);
+
 @keyframes fade-in {
   0% { opacity: 0; }
   100% { opacity: 1; }
@@ -23,26 +26,51 @@ body {
 
 a {
   color: inherit;
-  transition: opacity 0.3s ease-in;
+  transition:
+    color 0.5s $slow-timing-function,
+    border-color 0.5s $slow-timing-function,
+    background-color 0.5s $slow-timing-function,
+    transform 0.8s $slow-timing-function,
+    box-shadow 0.8s $slow-timing-function;
 
   &:hover {
     opacity: 0.6;
+    transform: scale(1.05) translateY(-2px);
+  }
+
+  &:active {
+    transform: scale(0.95);
   }
 }
 
 .button {
   display: inline-block;
   padding: 0 24px;
-  line-height: 40px;
+  height: 40px;
+  line-height: 36px;
   border: 2px solid;
-  border-radius: 20px;
+  border-radius: 40px;
   text-decoration: none;
   font-weight: bold;
+
+  &:hover {
+    opacity: 1;
+    color: white;
+    border-color: black;
+    background-color: black;
+    box-shadow: 0 10px 2px -8px rgba(black, 0.3);
+  }
 
   &.linkedin {
     $color: #00a0dc;
 
-    border-color: $color;
     color: $color;
+
+    &:hover {
+      color: white;
+      border-color: $color;
+      background-color: $color;
+      box-shadow: 0 10px 2px -8px rgba(mix(black, $color), 0.3);
+    }
   }
 }
